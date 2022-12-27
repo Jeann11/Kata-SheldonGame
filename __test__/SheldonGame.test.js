@@ -26,6 +26,10 @@ describe('Sheldon Game - Player 1', () => {
         expect(play("scissors", "lizard")).toBe("Player 1 Win");
     });
 
+    test('Player 1 Win: lizard eats paper', () => {
+        expect(play("lizard", "paper")).toBe("Player 1 Win");
+    });
+
 });
 
 
@@ -53,6 +57,10 @@ describe('Sheldon Game - Player 2', () => {
 
     test('Player 2 Win: scissors decapitates lizard', () => {
         expect(play("lizard", "scissors")).toBe("Player 2 Win");
+    });
+
+    test('Player 2 Win: lizard eats paper', () => {
+        expect(play("paper", "lizard")).toBe("Player 2 Win");
     });
 
 });
