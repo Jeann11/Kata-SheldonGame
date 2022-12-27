@@ -11,7 +11,8 @@ function play(handPlayer1, handPlayer2) {
         handPlayer1 == "scissors" && handPlayer2 == "lizard" ||
         handPlayer1 == "lizard" && handPlayer2 == "paper" ||
         handPlayer1 == "paper" && handPlayer2 == "Spock" ||
-        handPlayer1 == "Spock" && handPlayer2 == "rock"
+        handPlayer1 == "Spock" && handPlayer2 == "rock" ||
+        handPlayer1 == "rock" && handPlayer2 == "scissors"
         
     ) {
         result = "Player 1 Win"
@@ -25,7 +26,8 @@ function play(handPlayer1, handPlayer2) {
         handPlayer2 == "scissors" && handPlayer1 == "lizard" ||
         handPlayer2 == "lizard" && handPlayer1 == "paper" ||
         handPlayer2 == "paper" && handPlayer1 == "Spock" ||
-        handPlayer2 == "Spock" && handPlayer1 == "rock"
+        handPlayer2 == "Spock" && handPlayer1 == "rock" ||
+        handPlayer2 == "rock" && handPlayer1 == "scissors"
         
     ) {
         result = "Player 2 Win"
