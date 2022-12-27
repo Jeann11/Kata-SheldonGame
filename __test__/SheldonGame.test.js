@@ -18,6 +18,16 @@ describe('Sheldon Game', () => {
         expect(play("rock", "paper")).toBe("Player 2 Win");
     });
 
+    test('Player 1 Win: rock cruches lizard', () => {
+        expect(play("rock", "lizard")).toBe("Player 1 Win");
+    });
+
+    test('Player 2 Win: rock cruches lizard', () => {
+        expect(play("lizard", "rock")).toBe("Player 2 Win");
+    });
+
+
+
 
 });
 
