@@ -26,7 +26,13 @@ describe('Sheldon Game', () => {
         expect(play("lizard", "rock")).toBe("Player 2 Win");
     });
 
+    test('Player 1 Win: lizard poisons Spock', () => {
+        expect(play("lizard", "Spock")).toBe("Player 1 Win");
+    });
 
+    test('Player 2 Win: lizard poisons spock', () => {
+        expect(play("Spock", "lizard")).toBe("Player 2 Win");
+    });
 
 
 });
