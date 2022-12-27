@@ -1,37 +1,31 @@
 module.exports = play
 
-function play(handPlayer1, handPlayer2) {
-    let result
+function play(player1Object, player2Object) {
 
-    if (handPlayer1 == "scissors" && handPlayer2 == "paper" ||
-        handPlayer1 == "paper" && handPlayer2 == "rock" ||
-        handPlayer1 == "rock" && handPlayer2 == "lizard" ||
-        handPlayer1 == "lizard" && handPlayer2 == "Spock" ||
-        handPlayer1 == "Spock" && handPlayer2 == "scissors" ||
-        handPlayer1 == "scissors" && handPlayer2 == "lizard" ||
-        handPlayer1 == "lizard" && handPlayer2 == "paper" ||
-        handPlayer1 == "paper" && handPlayer2 == "Spock" ||
-        handPlayer1 == "Spock" && handPlayer2 == "rock" ||
-        handPlayer1 == "rock" && handPlayer2 == "scissors"
-        
+    const player1Wins = checkIfPlayerOneWin(player1Object, player2Object)
+    const isDraw = checkIfIsDraw(player1Object,player2Object)
+
+    if (player1Wins) return "Player 1 Win"
+    if (isDraw) return "Draw"
+
+    return "Player 2 Win"
+}
+
+function checkIfPlayerOneWin(player1Object, player2Object) {
+    if (player1Object == "scissors" && (player2Object == "paper" || player2Object == "lizard") ||
+        player1Object == "paper" && (player2Object == "rock" || player2Object == "Spock") ||
+        player1Object == "rock" && (player2Object == "lizard" || player2Object == "scissors") ||
+        player1Object == "lizard" && (player2Object == "Spock" || player2Object == "paper") ||
+        player1Object == "Spock" && (player2Object == "scissors" || player2Object == "rock")
     ) {
-        result = "Player 1 Win"
+        return true
     }
 
-    if (handPlayer2 == "scissors" && handPlayer1 == "paper" ||
-        handPlayer2 == "paper" && handPlayer1 == "rock" ||
-        handPlayer2 == "rock" && handPlayer1 == "lizard" ||
-        handPlayer2 == "lizard" && handPlayer1 == "Spock" ||
-        handPlayer2 == "Spock" && handPlayer1 == "scissors" ||
-        handPlayer2 == "scissors" && handPlayer1 == "lizard" ||
-        handPlayer2 == "lizard" && handPlayer1 == "paper" ||
-        handPlayer2 == "paper" && handPlayer1 == "Spock" ||
-        handPlayer2 == "Spock" && handPlayer1 == "rock" ||
-        handPlayer2 == "rock" && handPlayer1 == "scissors"
-        
-    ) {
-        result = "Player 2 Win"
-    }
+    return false
+}
 
-    return result
+function checkIfIsDraw(player1Object, player2Object) {
+    if (player1Object == player2Object) return true
+
+    return false
 }

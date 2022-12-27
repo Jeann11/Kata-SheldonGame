@@ -87,3 +87,13 @@ describe('Sheldon Game - Player 2', () => {
         expect(play("scissors", "rock")).toBe("Player 2 Win");
     });
 });
+
+describe('Sheldon Game - Draw', () => {
+    test('Draw', () => {
+        expect(play("scissors", "scissors")).toBe("Draw");
+        expect(play("paper", "paper")).toBe("Draw");
+        expect(play("rock", "rock")).toBe("Draw");
+        expect(play("lizard", "lizard")).toBe("Draw");
+        expect(play("Spock", "Spock")).toBe("Draw");
+    });
+});
